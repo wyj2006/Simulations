@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://u7cdm20pr02j"]
+
+[ext_resource type="Script" uid="uid://bh28g8v83tkdf" path="res://sand.gd" id="1_ecw6b"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7ajxt"]
+radius = 1.0
+
+[node name="Sand" type="RigidBody3D"]
+can_sleep = false
+script = ExtResource("1_ecw6b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_7ajxt")

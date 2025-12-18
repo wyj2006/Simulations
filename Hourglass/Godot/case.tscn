@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://i1ntynn2kj3p"]
+
+[ext_resource type="Script" uid="uid://17ea6y3tcuxk" path="res://case.gd" id="1_mk6mh"]
+
+[node name="Case" type="StaticBody3D"]
+script = ExtResource("1_mk6mh")

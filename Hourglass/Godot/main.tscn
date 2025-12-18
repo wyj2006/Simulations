@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://w640bn2o3xa0"]
+
+[ext_resource type="Script" uid="uid://bc3gptcxv5264" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://buf6r0bkcyhpf" path="res://camera_3d.gd" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://i1ntynn2kj3p" path="res://case.tscn" id="3_h2yge"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2yge"]
+size = Vector3(1, 0.1, 1)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_ig7tw")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 110)
+script = ExtResource("2_0xm2m")
+
+[node name="Case" parent="." instance=ExtResource("3_h2yge")]
+
+[node name="Board" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Board"]
+shape = SubResource("BoxShape3D_h2yge")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="CanvasLayer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "开始"
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

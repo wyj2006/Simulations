@@ -1,3 +1,6 @@
 .vscode/
 *.exe
 *.o
+*.tmp
+*.dat
+__pycache__
