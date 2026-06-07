@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b4nkwibq45i4t"]
+
+[ext_resource type="Script" uid="uid://fiehwg7xjvwm" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://cegifosqfuk7i" path="res://camera_2d.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://11l8v711glwm" path="res://particle.tscn" id="2_0xm2m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(1, 618)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(1, 618)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
+size = Vector2(1000, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+size = Vector2(1000, 1)
+
+[node name="World" type="Node2D" unique_id=1444763670]
+script = ExtResource("1_h2yge")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1672209074]
+script = ExtResource("1_ig7tw")
+
+[node name="Particle" parent="." unique_id=2018041403 instance=ExtResource("2_0xm2m")]
+
+[node name="Particle2" parent="." unique_id=1702200494 instance=ExtResource("2_0xm2m")]
+position = Vector2(70, 0)
+
+[node name="LeftEdge" type="StaticBody2D" parent="." unique_id=1560024862]
+process_mode = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftEdge" unique_id=5714084]
+position = Vector2(-500, 0)
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="RightEdge" type="StaticBody2D" parent="." unique_id=203999075]
+process_mode = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightEdge" unique_id=1587861422]
+position = Vector2(500, 0)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="UpEdge" type="StaticBody2D" parent="." unique_id=319148528]
+process_mode = 4
+position = Vector2(0, -309)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpEdge" unique_id=77920327]
+shape = SubResource("RectangleShape2D_lquwl")
+
+[node name="DownEdge" type="StaticBody2D" parent="." unique_id=866223254]
+process_mode = 4
+position = Vector2(0, 309)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DownEdge" unique_id=1666287781]
+shape = SubResource("RectangleShape2D_7mycd")

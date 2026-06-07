@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://11l8v711glwm"]
+
+[ext_resource type="Script" uid="uid://kqhxp30a6ws5" path="res://particle.gd" id="1_kgu82"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kgu82"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kgu82"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pxd2d"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_547df"]
+radius = 100.0
+
+[node name="Particle" type="RigidBody2D" unique_id=2018041403]
+physics_material_override = SubResource("PhysicsMaterial_kgu82")
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("1_kgu82")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1911344207]
+shape = SubResource("CircleShape2D_kgu82")
+
+[node name="MinInteractArea" type="Area2D" parent="." unique_id=1450435706]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MinInteractArea" unique_id=1090924720]
+shape = SubResource("CircleShape2D_pxd2d")
+
+[node name="MaxInteractArea" type="Area2D" parent="." unique_id=1067303009]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MaxInteractArea" unique_id=1119547041]
+shape = SubResource("CircleShape2D_547df")
+
+[connection signal="body_entered" from="MinInteractArea" to="." method="_on_min_interact_area_body_entered"]
+[connection signal="body_exited" from="MinInteractArea" to="." method="_on_min_interact_area_body_exited"]
+[connection signal="body_entered" from="MaxInteractArea" to="." method="_on_max_interact_area_body_entered"]
+[connection signal="body_exited" from="MaxInteractArea" to="." method="_on_max_interact_area_body_exited"]
