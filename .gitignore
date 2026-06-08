@@ -4,3 +4,5 @@
 *.tmp
 *.dat
 __pycache__
+Cargo.lock
+target
