@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://y5kariet243n"]
+
+[ext_resource type="Script" uid="uid://c3e578kwjdrsy" path="res://fluid.gd" id="1_2bmxh"]
+[ext_resource type="Script" uid="uid://krqql81cgdcm" path="res://camera_2d.gd" id="1_4lbnp"]
+
+[sub_resource type="Gradient" id="Gradient_2bmxh"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1)
+
+[node name="Fluid" type="Sprite2D" unique_id=698052167]
+script = ExtResource("1_2bmxh")
+width = 200.0
+height = 200.0
+particle_num = 1000
+particle_gradient = SubResource("Gradient_2bmxh")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=5028056]
+script = ExtResource("1_4lbnp")
