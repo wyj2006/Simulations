@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://cqabtdrpsy3s5"
+path="res://.godot/imported/compute_position.glsl-9722d8e27957045411a3222dda952f83.res"
+
+[deps]
+
+source_file="res://compute_position.glsl"
+dest_files=["res://.godot/imported/compute_position.glsl-9722d8e27957045411a3222dda952f83.res"]
+
+[params]
+

@@ -7,11 +7,11 @@
 offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1)
 
-[node name="Fluid" type="Sprite2D" unique_id=698052167]
+[node name="Fluid" type="TextureRect" unique_id=1596052335]
 script = ExtResource("1_2bmxh")
-width = 200.0
-height = 200.0
-particle_num = 1000
+width = 1000.0
+height = 1000.0
+particle_num = 10000
 particle_gradient = SubResource("Gradient_2bmxh")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=5028056]

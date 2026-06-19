@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://cijohhiwr7afs"
+path="res://.godot/imported/compute_density.glsl-8d86cbd669b2f0b9d0851078dc7a84d2.res"
+
+[deps]
+
+source_file="res://compute_density.glsl"
+dest_files=["res://.godot/imported/compute_density.glsl-8d86cbd669b2f0b9d0851078dc7a84d2.res"]
+
+[params]
+
