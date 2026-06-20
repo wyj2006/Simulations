@@ -3,14 +3,24 @@
 [ext_resource type="Script" uid="uid://c3e578kwjdrsy" path="res://fluid.gd" id="1_2bmxh"]
 [ext_resource type="Script" uid="uid://krqql81cgdcm" path="res://camera_2d.gd" id="1_4lbnp"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2bmxh"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_t3r7n"]
+material = SubResource("StandardMaterial3D_2bmxh")
+
+[sub_resource type="MultiMesh" id="MultiMesh_2bmxh"]
+use_colors = true
+mesh = SubResource("SphereMesh_t3r7n")
+
 [sub_resource type="Gradient" id="Gradient_2bmxh"]
 offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1)
 
-[node name="Fluid" type="TextureRect" unique_id=1596052335]
+[node name="Fluid" type="MultiMeshInstance2D" unique_id=439317155]
+multimesh = SubResource("MultiMesh_2bmxh")
 script = ExtResource("1_2bmxh")
-width = 1000.0
-height = 1000.0
+width = 500.0
+height = 500.0
 particle_num = 10000
 particle_gradient = SubResource("Gradient_2bmxh")
 

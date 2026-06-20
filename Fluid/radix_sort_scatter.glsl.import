@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://d3r8k7740dy3n"
+path="res://.godot/imported/radix_sort_scatter.glsl-bc9cb3da63ddaebedbe99d7fd7d6cf28.res"
+
+[deps]
+
+source_file="res://radix_sort_scatter.glsl"
+dest_files=["res://.godot/imported/radix_sort_scatter.glsl-bc9cb3da63ddaebedbe99d7fd7d6cf28.res"]
+
+[params]
+

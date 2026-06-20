@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://d0kmmbvxxuj1a"
+path="res://.godot/imported/radix_sort_count.glsl-a2779f7bfe5ed588f1cda3ac6eaa473b.res"
+
+[deps]
+
+source_file="res://radix_sort_count.glsl"
+dest_files=["res://.godot/imported/radix_sort_count.glsl-a2779f7bfe5ed588f1cda3ac6eaa473b.res"]
+
+[params]
+

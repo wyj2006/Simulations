@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://bm3jyub3o0coa"
+path="res://.godot/imported/build_lookup_indices.glsl-e2823e6e4dd1e2ea61672d7761821eee.res"
+
+[deps]
+
+source_file="res://build_lookup_indices.glsl"
+dest_files=["res://.godot/imported/build_lookup_indices.glsl-e2823e6e4dd1e2ea61672d7761821eee.res"]
+
+[params]
+

@@ -1,5 +1,7 @@
 #define PI 3.14159265358979323846
 
+layout(local_size_x=256,local_size_y=1,local_size_z=1) in;
+
 layout(set=0,binding=0) restrict buffer Parameters{
     float particle_num;
     float smooth_radius;
@@ -13,6 +15,8 @@ layout(set=0,binding=0) restrict buffer Parameters{
     float particle_radius;
     float collision_damp;
     float dt;
+    float radix_bits;
+    float radix_shift;
 }params;
 
 layout(set=0,binding=1) restrict buffer PositionBuffer{
@@ -38,6 +42,18 @@ layout(set=0,binding=5) restrict buffer SpatialLookupBuffer{
 layout(set=0,binding=6) restrict buffer StartIndicesBuffer{
     uint data[];
 }start_indices;
+
+layout(set=0,binding=7) restrict buffer RadixCountBuffer{
+    uint data[];
+}radix_count;
+
+layout(set=0,binding=8) restrict buffer RadixTempBuffer{
+    ivec2 data[];
+}radix_temp;
+
+layout(set=0,binding=9) restrict buffer RadixOffsetBuffer{
+    uint data[];
+}radix_offset;
 
 uint hash_cell(ivec2 coord)
 {
