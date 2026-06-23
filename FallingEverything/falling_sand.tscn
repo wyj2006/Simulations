@@ -2,9 +2,22 @@
 
 [ext_resource type="Script" uid="uid://chk3tb2w64nhw" path="res://falling_sand.gd" id="1_fd1kn"]
 [ext_resource type="Script" uid="uid://cjwk8gnp18g7e" path="res://camera_2d.gd" id="2_vr5ub"]
+[ext_resource type="Texture2D" uid="uid://bb13eoigg43pj" path="res://icon.svg" id="3_koe0a"]
 
 [node name="FallingSand" type="Sprite2D" unique_id=1703289506]
 script = ExtResource("1_fd1kn")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=223087812]
 script = ExtResource("2_vr5ub")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1250623055]
+position = Vector2(100, 10)
+gravity_scale = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=1489155667]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_koe0a")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D" unique_id=1398239155]
+scale = Vector2(0.1, 0.1)
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
